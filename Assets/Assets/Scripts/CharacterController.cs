@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour {
 	
 	public float inputDelay = 0.1f;
-	public float forwardVel = 12;
+	public float forwardVel = 20;
 	public float rotateVel = 100;
 
 	Quaternion targetRotation;
