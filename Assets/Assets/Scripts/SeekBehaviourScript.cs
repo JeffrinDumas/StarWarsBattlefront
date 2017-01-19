@@ -35,10 +35,7 @@ public class SeekBehaviourScript : MonoBehaviour
 	
 		Vector3 steeringForce			=	desiredVelocity - GetComponent<Rigidbody>().velocity;
 
-      //  if (GetComponent<Rigidbody>().velocity > min)
-        {
-            
-        }
+      
 		
 		GetComponent<Rigidbody>().velocity				=	GetComponent<Rigidbody>().velocity + steeringForce / mass;
 	}
