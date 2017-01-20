@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour 
+public class CheckpointTrigger : MonoBehaviour 
 {
 	public List<Transform> checkpointPositions = new List<Transform>();
 	private int currentCheckpoint = 0;
