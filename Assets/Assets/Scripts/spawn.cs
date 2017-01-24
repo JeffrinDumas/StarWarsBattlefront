@@ -6,7 +6,7 @@ public class spawn : MonoBehaviour
 {
     public GameObject ObjectToSpawn;
     public int NumberOfEnemies;
-    private float spawnRadius = 2;
+    public float spawnRadius = 2;
     private Vector3 spawnPosition;
 
 

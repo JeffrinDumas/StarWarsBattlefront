@@ -69,10 +69,5 @@ namespace Assets.Assets.Scripts
 
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity + steeringForce / Mass;
         }
-
-        void OnTriggerEnter(Collider other) {
-        Destroy(this.gameObject);
-    }
-
     }
 }
