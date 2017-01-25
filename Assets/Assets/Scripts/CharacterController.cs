@@ -62,12 +62,4 @@ public class CharacterController : MonoBehaviour {
 		}
 		transform.rotation = targetRotation;
 	}
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-        }
-    }
 }

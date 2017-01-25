@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement2 : MonoBehaviour {
+public class EnemyMovement2 : MonoBehaviour
+{
 
     private Transform myTransform;
     private Transform target;
     private int maxDistance = 1;
     private int rotationSpeed = 30;
     private int moveSpeed = 25;
+    private Transform collision;
 
 
     void Awake()
     {
         myTransform = transform;
     }
+
     // Use this for initialization
     void Start()
     {
@@ -31,7 +34,8 @@ public class EnemyMovement2 : MonoBehaviour {
         Debug.DrawLine(target.position, myTransform.position, Color.yellow);
 
         //Look at target
-        myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+        myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
+            Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
 
         if (Vector3.Distance(target.position, myTransform.position) > maxDistance)
         {
