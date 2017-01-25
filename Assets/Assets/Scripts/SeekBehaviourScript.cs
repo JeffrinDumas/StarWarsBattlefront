@@ -42,6 +42,7 @@ public class SeekBehaviourScript : MonoBehaviour
      void OnTriggerEnter(Collider other)
     {
         GameObject.FindGameObjectWithTag("Enemy");
+
     }
      void OnTriggerExit(Collider other)
     {

@@ -12,6 +12,7 @@ namespace Assets.Assets.Scripts
         public float AttackTime;
         public float CoolDown;
         private readonly Transform _myTransform;
+        public Transform player;
 
         public EnemyMovement(Transform myTransform)
         {
@@ -31,7 +32,12 @@ namespace Assets.Assets.Scripts
         private void Update()
         {
             Seek();
-
+            
+          
+            if (player != null)
+            {
+                transform.LookAt(player);
+            }
             Debug.DrawLine(Target.position, _myTransform.position, Color.red);
             var dist = Vector3.Distance(Target.position, transform.position);
             if (dist < 3)
