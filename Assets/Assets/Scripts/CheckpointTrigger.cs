@@ -28,7 +28,6 @@ public class CheckpointTrigger : MonoBehaviour
 	void OnTriggerEnter(Collider col) {
        
 		if(col.gameObject.tag == "Checkpoint"){
-            
             GameObject.Destroy(col.gameObject);
             currentCheckpoint++;
 			showCheckpoint ();
