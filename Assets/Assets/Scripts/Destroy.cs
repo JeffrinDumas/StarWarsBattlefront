@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Destroy : MonoBehaviour {
-    public float lifetime = 6;
-	// Use this for initialization
-	void Start () {
-        Destroy(gameObject, lifetime);
-	}
-	
-	
+public class Destroy : MonoBehaviour
+{
+    [SerializeField]
+    private spawn spawner;
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            GameObject.Destroy(col.gameObject);
+            spawner.SpawnEnemy();
+        }
+    }
 }

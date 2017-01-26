@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class wall : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    [SerializeField]
+    private spawn spawner;
+    void OnCollisionEnter(Collision col)
     {
-        Destroy(other.gameObject);
+        if (col.gameObject.tag == "Enemy")
+        {
+            GameObject.Destroy(col.gameObject);
+            spawner.SpawnEnemy();
+        }
     }
 }
+
