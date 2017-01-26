@@ -13,8 +13,8 @@ public class CheckpointTrigger : MonoBehaviour
         //     checkpointPositions.Add( new Vector3 (0, 20, 25));
         //     checkpointPositions.Add(new Vector3(100, 25, 25));
         //     checkpointPositions.Add(new Vector3(150, 30, 25));
-        //    checkpointPositions.Add(new Vector3(200, 35, 25));
-        //      checkpointPositions.Add(new Vector3(250, 40, 25));
+        //     checkpointPositions.Add(new Vector3(200, 35, 25));
+        //     checkpointPositions.Add(new Vector3(250, 40, 25));
 
         Instantiate(checkPrefab, checkpointPositions[currentCheckpoint].position, checkpointPositions[currentCheckpoint].rotation);
 
@@ -38,7 +38,8 @@ public class CheckpointTrigger : MonoBehaviour
 
 	}
 	public void showCheckpoint(){
-        Instantiate(checkPrefab, checkpointPositions[currentCheckpoint].position, checkpointPositions[currentCheckpoint].rotation);
+
+        GameObject checkpoint = Instantiate(checkPrefab, checkpointPositions[currentCheckpoint].position, checkpointPositions[currentCheckpoint].rotation);
     }
 
     void Update()

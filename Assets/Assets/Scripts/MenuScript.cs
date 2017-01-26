@@ -7,7 +7,6 @@ public class MenuScript : MonoBehaviour
 {
  public void StartGame(string StartGame)
     {
-        StartCoroutine(DeathDelay());
         SceneManager.LoadScene(StartGame);
     }
 
@@ -15,9 +14,4 @@ public class MenuScript : MonoBehaviour
     {
         Application.Quit();
     }
-    IEnumerator DeathDelay()
-    {
-        yield return new WaitForSeconds(3);
-    }
-
 }
