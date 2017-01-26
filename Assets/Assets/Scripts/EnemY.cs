@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement2 : MonoBehaviour
+public class EnemY : MonoBehaviour
 {
 
     private Transform myTransform;
     private Transform target;
     private int maxDistance = 1;
     private int rotationSpeed = 30;
-    private int moveSpeed = 25;
+    private int moveSpeed = 30;
     private Transform collision;
 
 

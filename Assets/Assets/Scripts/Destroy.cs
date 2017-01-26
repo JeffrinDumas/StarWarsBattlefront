@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Destroy : MonoBehaviour {
+public class Destroy : MonoBehaviour
+{
+    [SerializeField]
+    private spawn spawner;
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "enemy")
+        if (col.gameObject.tag == "Enemy")
         {
-            Destroy(col.gameObject);
+            GameObject.Destroy(col.gameObject);
+            spawner.SpawnEnemy();
         }
     }
 }

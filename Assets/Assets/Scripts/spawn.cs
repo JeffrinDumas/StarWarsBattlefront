@@ -4,32 +4,27 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-    public GameObject ObjectToSpawn;
-    public int NumberOfEnemies;
+    public GameObject objectToSpawn;
+    public int maxNumberOfEnemies;
     public float spawnRadius = 2;
     private Vector3 spawnPosition;
 
-
-	void Start ()
+    void Start()
     {
-		spawnObject();
-	}
-	
-	
-	void Update ()
-    {
-		
-	}
-
-    void spawnObject()
-    {
-        for (int i = 0; i < NumberOfEnemies; i++)
-
+        for (int i = 0; i < maxNumberOfEnemies; i++)
         {
-            spawnPosition = transform.position + Random.insideUnitSphere * spawnRadius;
-            //Vector3 adjustedPos = new Vector3(spawnPosition.x, 1, spawnPosition.z);
-            Instantiate(ObjectToSpawn, spawnPosition, Quaternion.identity);
+            SpawnEnemy();
         }
     }
+
+
+    public void SpawnEnemy()
+    {
+        spawnPosition = transform.position + Random.insideUnitSphere * spawnRadius;
+        //Vector3 adjustedPos = new Vector3(spawnPosition.x, 1, spawnPosition.z);
+        GameObject enemy = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+
+    }
+   
 }
 
