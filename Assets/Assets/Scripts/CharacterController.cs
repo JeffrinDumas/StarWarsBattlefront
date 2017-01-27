@@ -47,7 +47,6 @@ public class CharacterController : MonoBehaviour {
 	void Run()
 	{
 		if (Mathf.Abs (forwardInput) > inputDelay) {
-			//move
 			rBody.velocity = transform.forward * forwardInput * forwardVel;
 		} else 
 		{
