@@ -8,6 +8,9 @@ public class CamSwitch : MonoBehaviour {
     private Camera firstPersonCamera;
     [SerializeField]
     private Camera thirdPersonCamera;
+    [SerializeField]
+    private Camera deathCamera;
+    private DeathCamera dc;
 
     private bool camSwitch = true;
 
@@ -15,7 +18,8 @@ public class CamSwitch : MonoBehaviour {
 	void Start () {
         thirdPersonCamera.gameObject.SetActive(true);
         firstPersonCamera.gameObject.SetActive(false);
-	}
+        deathCamera.gameObject.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,8 +39,16 @@ public class CamSwitch : MonoBehaviour {
 
                 Debug.Log("3rd");
             }
+           
 
             camSwitch = !camSwitch;
         }
-	}
+        if (PlayerDeath.death == true)
+        {
+            deathCamera.gameObject.SetActive(true);
+            thirdPersonCamera.gameObject.SetActive(false);
+            dc = GameObject.Find("DeathCamera").GetComponent<DeathCamera>();
+            dc.CameraBackwards();
+        }
+    }
 }
