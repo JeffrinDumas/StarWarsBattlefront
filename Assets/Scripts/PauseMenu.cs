@@ -4,10 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
 
-    public Transform canvas;
+    public GameObject canvas;
+
+    private MenuScript menu;
    
     void Start ()
     {
+        menu = GetComponent<MenuScript>();
+
         canvas.gameObject.SetActive(false);
     }
 
@@ -25,13 +29,13 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-    public void Restart()
+    public void Restart(string StartGame)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(StartGame);
         Time.timeScale = 1;
     }
 
-      public void Pause()
+    public void Pause()
     {
        
             if (canvas.gameObject.activeInHierarchy == false)
